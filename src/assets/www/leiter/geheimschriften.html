@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <title>Scoutdroid</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script language="javascript">
+    modes = ["a_ist_1","a_ist_n","chinesen","indianer","morse","gundl"];
+    modes_lang = ["A ist 1","A ist N","Chinesen","Indianer","Morse","Gundl/Spezl"];
+    code_mode = "a_ist_1";
+    
+    function changeMode(){
+      html = "";
+      html +='<ul class="select">';
+      for (i=0;i<modes.length;i++){
+        sel = "";
+        if (modes[i]==code_mode) sel=' class="selected"';
+        html+='<li'+sel+'><a href="javascript:void(0)" onclick="setMode(\''+modes[i]+'\');">'+modes_lang[i]+'</a></li>';
+      }
+      html +='</ul>';
+      document.getElementById("select").innerHTML=html;
+      document.getElementById("select").style.display="block";
+    }
+    
+    function setMode(what){
+      code_mode = what;
+      document.getElementById("select").style.display="none";
+      for (i=0;i<modes.length;i++){
+        if (modes[i]==code_mode){
+          document.getElementById("mode").innerHTML="Modus: "+modes_lang[i];
+          break;
+        }
+      }
+      
+    }
+
+    function translateit(){
+      text = document.getElementById("original").value;
+      text = text.replace(/ß/g,"SS");
+      text = text.replace(/\u00df/g,"SS");
+      text = text.toUpperCase();
+      text = text.replace(/\u00c4/g,"AE");
+      text = text.replace(/\u00d6/g,"OE");
+      text = text.replace(/\u00dc/g,"UE");
+      text = text.replace(/Ä/g,"AE");
+      text = text.replace(/Ö/g,"OE");
+      text = text.replace(/Ü/g,"UE");
+      
+      erg = "";
+      
+      KEEP = ".?!"
+      
+      switch (code_mode){
+        case "a_ist_1":
+          for (i=0;i<text.length;i++){
+            if (text.charAt(i)==" ") erg+="&nbsp;&nbsp;";
+            if (KEEP.indexOf(text.charAt(i))>=0) erg+=text.charAt(i)+" ";
+            if (text.charCodeAt(i)<65||text.charCodeAt(i)>90) continue;
+            erg+=(text.charCodeAt(i)-64)+" ";
+          }
+          break;
+          
+        case "a_ist_n":
+          for (i=0;i<text.length;i++){
+            if (text.charAt(i)==" ") erg+="&nbsp;&nbsp;";
+            if (KEEP.indexOf(text.charAt(i))>=0) erg+=text.charAt(i)+" ";
+            if (text.charCodeAt(i)<65||text.charCodeAt(i)>90) continue;
+            newcode = text.charCodeAt(i)-13;
+            if (newcode<65){
+              newcode+=26;
+            }          
+            erg+=String.fromCharCode(newcode)+" ";
+          }
+          break;
+          
+        case "chinesen":
+          for (i=0;i<text.length;i++){ 
+            if (text.charAt(i)==" ") erg+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            if (KEEP.indexOf(text.charAt(i))>=0) erg+=text.charAt(i)+" ";
+            if (text.charCodeAt(i)<65||text.charCodeAt(i)>90) continue;
+            erg+='<img src="../imgs/chinesen/'+text.charAt(i)+'.png" width="20" height="20" alt="'+text.charAt(i)+'" /> ';
+          }
+          break;
+          
+        case "indianer":
+          for (i=0;i<text.length;i++){ 
+            if (text.charAt(i)==" ") erg+="&nbsp;&nbsp;&nbsp;&nbsp;";
+            if (KEEP.indexOf(text.charAt(i))>=0) erg+=text.charAt(i)+" ";
+            if (text.charCodeAt(i)<65||text.charCodeAt(i)>90) continue;
+            erg+='<img src="../imgs/indianer/'+text.charAt(i)+'.png" width="20" height="20" alt="'+text.charAt(i)+'" /> ';
+          }
+          break;
+          
+        case "morse":
+          morse_abc = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..","----"];
+          text = text.replace(/\[/g,"]");
+          text = text.replace(/CH/g,"[");
+          for (i=0;i<text.length;i++){
+            if (text.charAt(i)==" "){
+              erg+='/';
+            } else if (text.charAt(i)=="."){
+              erg+="//";
+            } else if (i>0&&text.charAt(i)==text.charAt(i-1)){
+              erg+="";
+            } else {
+              if (text.charCodeAt(i)<65||text.charCodeAt(i)>91) continue;
+              erg+=morse_abc[text.charCodeAt(i)-65]+'/';
+            }
+          }
+          break;
+          
+        case "gundl":
+          morse_abc = ["GS","US","NS","DS","LS","GP","UP","NP","DP","DP","LP","GE","UE","NE","DE","LE","GZ","UZ","NZ","DZ","LZ","GL","UL","NL","DL","LL"];
+          text = text.replace(/\[/g,"]");
+          for (i=0;i<text.length;i++){
+            if (text.charAt(i)==" ") erg+="&nbsp;&nbsp;";
+            if (KEEP.indexOf(text.charAt(i))>=0) erg+=text.charAt(i)+" ";
+            if (text.charCodeAt(i)<65||text.charCodeAt(i)>90) continue;
+            erg+=morse_abc[text.charCodeAt(i)-65]+' ';
+          }
+          break;
+          
+      }
+      
+      document.getElementById("ergebnis").innerHTML = erg;
+    }
+  </script>
+</head>
+<body>  
+  <ul>
+    <li class="heading">Geheimschriften</li>
+    <li>Text</li>
+    <li class="indent"><textarea id="original" rows="4"></textarea></li>
+    <li><a href="#select" id="mode" onclick="changeMode();">Geheimschrift: A ist 1</a></li>
+    <li><a href="#uebersetzen" onclick="translateit();">&Uuml;bersetzen</a></li>
+    <li class="indent" id="ergebnis">Hier steht dann die &Uuml;bersetzung!</li>
+  </ul>
+  <div id="select" style="display:none;">
+    <ul class="select">
+    </ul>
+  </div>
+</body>
+</html>

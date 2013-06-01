@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <title>Gundl/Spezl</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script>
+  
+  var supportsOrientationChange = "onorientationchange" in window,
+  orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+    
+  function doOrientationStuff(){
+    document.getElementById("grafik").width = window.innerWidth - 60;
+  }
+
+  window.addEventListener(orientationEvent, function() {
+      doOrientationStuff()
+  }, false); 
+  
+  
+  </script>
+</head>
+<body onload="doOrientationStuff()">  
+  <ul>
+    <li class="heading">Gundl/Spezl</li>
+    <li class="indent">Gundl/Spezl ist eine Ersetzungs-Geheimschrift, in der jeder Buchstabe durch zwei andere ersetzt wird, welche durch eine einfache Aufl&ouml;sungsgrafik gel&ouml;st werden kann.</li>
+    <li>Aufl&ouml;sungstabelle</li>
+    <li class="indent">
+    <table>
+      <tr>
+        <td>GS<td>A</td></td>
+      </tr>
+      <tr>
+        <td>US<td>B</td></td>
+      </tr>
+      <tr>
+        <td>NS<td>C</td></td>
+      </tr>
+      <tr>
+        <td>DS<td>D</td></td>
+      </tr>
+      <tr>
+        <td>LS<td>E</td></td>
+      </tr>
+      <tr>
+        <td>GP<td>F</td></td>
+      </tr>
+      <tr>
+        <td>UP<td>G</td></td>
+      </tr>
+      <tr>
+        <td>NP<td>H</td></td>
+      </tr>
+      <tr>
+        <td>DP<td>I</td></td>
+      </tr>
+      <tr>
+        <td>DP<td>J</td></td>
+      </tr>
+      <tr>
+        <td>LP<td>K</td></td>
+      </tr>
+      <tr>
+        <td>GE<td>L</td></td>
+      </tr>
+      <tr>
+        <td>UE<td>M</td></td>
+      </tr>
+      <tr>
+        <td>NE<td>N</td></td>
+      </tr>
+      <tr>
+        <td>DE<td>O</td></td>
+      </tr>
+      <tr>
+        <td>LE<td>P</td></td>
+      </tr>
+      <tr>
+        <td>GZ<td>Q</td></td>
+      </tr>
+      <tr>
+        <td>UZ<td>R</td></td>
+      </tr>
+      <tr>
+        <td>NZ<td>S</td></td>
+      </tr>
+      <tr>
+        <td>DZ<td>T</td></td>
+      </tr>
+      <tr>
+        <td>LZ<td>U</td></td>
+      </tr>
+      <tr>
+        <td>GL<td>V</td></td>
+      </tr>
+      <tr>
+        <td>UL<td>W</td></td>
+      </tr>
+      <tr>
+        <td>NL<td>X</td></td>
+      </tr>
+      <tr>
+        <td>DL<td>Y</td></td>
+      </tr>
+      <tr>
+        <td>LL<td>Z</td></td>
+      </tr>
+    </table>
+    </li>
+    <li>Aufl&ouml;sungsgrafik</li>
+    <li class="indent">Der erste Buchstabe wird in der Spalte gesucht, der zweite in der Reihe. Der Schnittpunkt ist der entschl&uuml;sselte Buchstabe.</li>
+    <li style="text-align:center;"><img id="grafik" src="../imgs/gundlspezl.png" width="300" /></li>
+  </ul>
+</body>
+</html>

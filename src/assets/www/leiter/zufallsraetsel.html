@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <title>Scoutdroid</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script language="javascript" type="text/javascript" src="../lib/jx.js"></script>
+  <script language="javascript">
+    var solution = null;
+    function reveal(){
+      document.getElementById("solution").innerHTML = solution;
+    }
+    
+  </script>
+</head>
+<body onload="load_riddle()">  
+  <ul>
+    <li class="heading">Zuffalsr&auml;tsel</li>
+    <li class="indent" id="author" style="font-style:italic;">von ...</li>
+    <li>R&auml;tsel</li>
+    <li class="indent" id="riddle">Lade...</li>
+    <li>L&puml;sung</li>
+    <li class="indent" onclick="reveal()" id="solution">Klicke um die L&ouml;sung zu zeigen.</li>
+  </ul>
+  <div id="select" style="display:none;">
+    <ul class="select">
+    </ul>
+  </div>
+</body>
+</html>

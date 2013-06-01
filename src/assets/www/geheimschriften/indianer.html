@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <title>Indianer</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script>
+  
+  var supportsOrientationChange = "onorientationchange" in window,
+  orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+    
+  function doOrientationStuff(){
+    document.getElementById("grafik").width = window.innerWidth - 60;
+  }
+
+  window.addEventListener(orientationEvent, function() {
+      doOrientationStuff()
+  }, false); 
+  
+  
+  </script>
+</head>
+<body onload="doOrientationStuff()">  
+  <ul>
+    <li class="heading">Indianer</li>
+    <li class="indent">Die Indianer ist eine einfache Ersetzungs-Geheimschrift, in der jeder Buchstabe durch ein Zeichen ersetzt wird, welches durch eine einfache Aufl&ouml;sungsgrafik gel&ouml;st werden kann.</li>
+    <li>Aufl&ouml;sungstabelle</li>
+    <li class="indent">
+    <table>
+      <tr>
+        <td><img src="../imgs/indianer/A.png" width="20" height="20" alt="" /><td>A</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/B.png" width="20" height="20" alt="" /><td>B</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/C.png" width="20" height="20" alt="" /><td>C</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/D.png" width="20" height="20" alt="" /><td>D</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/E.png" width="20" height="20" alt="" /><td>E</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/F.png" width="20" height="20" alt="" /><td>F</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/G.png" width="20" height="20" alt="" /><td>G</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/H.png" width="20" height="20" alt="" /><td>H</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/I.png" width="20" height="20" alt="" /><td>I</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/J.png" width="20" height="20" alt="" /><td>J</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/K.png" width="20" height="20" alt="" /><td>K</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/L.png" width="20" height="20" alt="" /><td>L</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/M.png" width="20" height="20" alt="" /><td>M</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/N.png" width="20" height="20" alt="" /><td>N</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/O.png" width="20" height="20" alt="" /><td>O</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/P.png" width="20" height="20" alt="" /><td>P</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/Q.png" width="20" height="20" alt="" /><td>Q</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/R.png" width="20" height="20" alt="" /><td>R</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/S.png" width="20" height="20" alt="" /><td>S</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/T.png" width="20" height="20" alt="" /><td>T</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/U.png" width="20" height="20" alt="" /><td>U</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/V.png" width="20" height="20" alt="" /><td>V</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/W.png" width="20" height="20" alt="" /><td>W</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/X.png" width="20" height="20" alt="" /><td>X</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/Y.png" width="20" height="20" alt="" /><td>Y</td></td>
+      </tr>
+      <tr>
+        <td><img src="../imgs/indianer/Z.png" width="20" height="20" alt="" /><td>Z</td></td>
+      </tr>
+    </table>
+    </li>
+    <li>Aufl&ouml;sungsgrafik</li>
+    <li class="indent">Hier werden die Begrenzungslinien der Buchstaben als Aufl&ouml;sung genommen. Der Zweite Buchstabe in einem Feld hat einen Punkt im Feld.</li>
+    <li style="text-align:center;"><img id="grafik" src="../imgs/indianer.png" width="300" /></li>
+  </ul>
+</body>
+</html>

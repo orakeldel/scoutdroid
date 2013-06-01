@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="user-scalable=no,width=device-width" />
+  <title>Morse</title>
+  <link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+  <script>
+  
+  var supportsOrientationChange = "onorientationchange" in window,
+  orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+    
+  function doOrientationStuff(){
+    document.getElementById("morsebaum").width = window.innerWidth - 60;
+  }
+
+  window.addEventListener(orientationEvent, function() {
+      doOrientationStuff()
+  }, false); 
+  
+  
+  </script>
+</head>
+<body onload="doOrientationStuff()">  
+  <ul>
+    <li class="heading">Morse</li>
+    <li class="indent">Morse wurde entwickelt um Nachrichten elektronisch zu versenden. Es gab nur zwei Zust&auml;nde die &uuml;bertragen werden konnten: Strom an, Strom aus. So entstand der Morse Code.<br />
+    Es gibt verschiedene Techniken Morse-Code zu &uuml;bersetzten: Auswendig merken, Tabelle, Baum</li>
+    
+    <li>Aufl&ouml;sungstabelle</li>
+    <li class="indent">
+    <table>
+      <tr>
+        <td>&middot;-</td><td>A</td><td>An-ton</td>
+      </tr>
+      <tr>
+        <td>-&middot;&middot;&middot;</td><td>B</td><td>Bo-den-be-lag</td>
+      </tr>
+      <tr>
+        <td>-&middot;-&middot;</td><td>C</td><td>Co-ca-co-la</td>
+      </tr>
+      <tr>
+        <td>-&middot;&middot;</td><td>D</td><td>Dorf-kir-che</td>
+      </tr>
+      <tr>
+        <td>&middot;</td><td>E</td><td>Eis</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;-&middot;</td><td>F</td><td>Feld-ka-no-ne</td>
+      </tr>
+      <tr>
+        <td>--&middot;</td><td>G</td><td>Gro&szlig;-glock-ner</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;&middot;</td><td>H</td><td>Ha-sen-z&uuml;ch-ter</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;</td><td>I</td><td>In-sel</td>
+      </tr>
+      <tr>
+        <td>&middot;---</td><td>J</td><td>Ja-wohl-O-dol</td>
+      </tr>
+      <tr>
+        <td>-&middot;-</td><td>K</td><td>Klo-ster-hof</td>
+      </tr>
+      <tr>
+        <td>&middot;-&middot;&middot;</td><td>L</td><td>Li-mo-na-de</td>
+      </tr>
+      <tr>
+        <td>--</td><td>M</td><td>Mo-tor</td>
+      </tr>
+      <tr>
+        <td>-&middot;</td><td>N</td><td>Nor-den</td>
+      </tr>
+      <tr>
+        <td>---</td><td>O</td><td>Oh-Ot-to</td>
+      </tr>
+      <tr>
+        <td>&middot;--&middot;</td><td>P</td><td>Per-Mo-tor-rad</td>
+      </tr>
+      <tr>
+        <td>--&middot;-</td><td>Q</td><td>Quols-dorf-bei-Forst</td>
+      </tr>
+      <tr>
+        <td>&middot;-&middot;</td><td>R</td><td>Re-vol-ver</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;</td><td>S</td><td>Ser-pen-tin</td>
+      </tr>
+      <tr>
+        <td>-</td><td>T</td><td>Tod</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;-</td><td>U</td><td>U-ni-form</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;-</td><td>V</td><td>Ven-ti-la-tor</td>
+      </tr>
+      <tr>
+        <td>&middot;--</td><td>W</td><td>Wind-mo-tor</td>
+      </tr>
+      <tr>
+        <td>-&middot;&middot;-</td><td>X</td><td>oh-ne-Merk-wort</td>
+      </tr>
+      <tr>
+        <td>-&middot;--</td><td>Y</td><td>York-bebt-vor-Zorn</td>
+      </tr>
+      <tr>
+        <td>--&middot;&middot;</td><td>Z</td><td>Zoll-vor-steh-er</td>
+      </tr>
+      <tr>
+        <td>&middot;-&middot;-</td><td>&Auml;</td><td>&Auml;s-op-ist-tot</td>
+      </tr>
+      <tr>
+        <td>---&middot;</td><td>&Ouml;</td><td>&Ouml;-ko-no-mie</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;--</td><td>&Uuml;</td><td>&Uuml;b-er-kon-to</td>
+      </tr>
+      <tr>
+        <td>&middot;----</td><td>1</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;---</td><td>2</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;--</td><td>3</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;&middot;-</td><td>4</td>
+      </tr>
+      <tr>
+        <td>&middot;&middot;&middot;&middot;&middot;</td><td>5</td>
+      </tr>
+      <tr>
+        <td>-&middot;&middot;&middot;&middot;</td><td>6</td>
+      </tr>
+      <tr>
+        <td>--&middot;&middot;&middot;</td><td>7</td>
+      </tr>
+      <tr>
+        <td>---&middot;&middot;</td><td>8</td>
+      </tr>
+      <tr>
+        <td>----&middot;</td><td>9</td>
+      </tr>
+      <tr>
+        <td>-----</td><td>0</td>
+      </tr>
+    </table>
+    </li>
+    <li>Baum</li>
+    <li class="indent">
+      Es wird am ersten Knoten begonnen. Danach wird je nachdem, ob es sich um einen Strich oder Punkt handelt nach rechts oder links weitergegangen. Dies wird f&uuml;r jedes neue Zeichen gemacht&middot;<br />
+      Da Zahlen selten Vorkommen, habe ich sie in diesem Baum weggelassen.
+    </li>
+    <li style="text-align:center;"><img id="morsebaum" src="../imgs/morse/baum.png" width="300" /></li>
+    <li>Merken</li>
+    <li class="indent">
+      Auch f&uuml;r das Merken gibt es ein paar Hilfsmittel.<br />
+      <br />
+      <b>Die Grundw&ouml;rter:</b><br />
+      Bei den Grundw&ouml;rtern wird immer ein Punkt/Strich hinzugef&uuml;gt.<br />
+      Nur Punkte: E I S H (&middot;,&middot;&middot;,&middot;&middot;&middot;,&middot;&middot;&middot;&middot;)<br />
+      Nur Striche: T M O CH (-,--,---,----)<br />
+      Ein Strich, danach nur Punkte: N D B (-&middot;,-&middot;&middot;,-&middot;&middot;&middot;)<br />
+      Nur Punkte, danach ein Strich: A U V (&middot;-,&middot;&middot;-,&middot;&middot;&middot;-)<br />
+      <br />
+      <b>Die Merkw&ouml;rter:</b><br />
+      Die Merkw&ouml;rter sind eine gute M&ouml;glichkeit sich die Kombinationen zu merken. Jede Silbe mit einem O ist ein Strich, jede andere ein Punkt.
+      Die Merkw&ouml;rter sind in der oberen Tabelle angef&uuml;hrt;
+    </li>
+  </ul>
+</body>
+</html>
